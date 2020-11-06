@@ -1,10 +1,9 @@
+import { helloHandler } from "../handlers/hello.handler"
+
 const routes = {
   method: "GET",
   path: "/",
-  handler: () => {
-    const hw = "hello world es6"
-    return hw
-  },
+  handler: helloHandler,
 }
 
 export default routes
