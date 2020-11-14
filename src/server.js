@@ -1,9 +1,9 @@
-import Hapi from "@hapi/hapi"
-import routes from "./routes/routes"
+import Hapi from '@hapi/hapi'
+import routes from './routes/routes'
 
 const server = Hapi.server({
   port: 8080,
-  host: "localhost",
+  host: 'localhost',
 })
 
 server.route(routes)
@@ -19,7 +19,7 @@ const start = async () => {
   return server
 }
 
-process.on("unhandledRejection", (err) => {
+process.on('unhandledRejection', (err) => {
   console.error(err)
   process.exit(1)
 })

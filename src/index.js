@@ -1,3 +1,9 @@
-import { start } from "./server"
+import { start } from './server'
+import { startSignalServer } from './signalServer'
+import mediaServer from './MediaServer'
 
-start()
+mediaServer.CreateWorkers().then(async () => {
+  const server = await start()
+  server.app.mediaServer = mediaServer
+  startSignalServer()
+})
